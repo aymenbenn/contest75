@@ -5,11 +5,11 @@ export const CategoryCards = () => {
   const cards = [
     {
       title: 'Trucks For Sale',
-      image: '/A.jpeg',
+      image: '/A.png',
     },
     {
       title: 'Accessories',
-      image: '/B.jpeg',
+      image: '/B.png',
     },
     {
       title: 'Custom Builds',
