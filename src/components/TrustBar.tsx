@@ -1,47 +1,59 @@
-import React from 'react';
-import { ChevronRightIcon } from 'lucide-react';
-
-export const CategoryCards = () => {
-  const cards = [
-    { title: 'Trucks For Sale', image: '/A.png' },
-    { title: 'Accessories', image: '/B.png' },
-    { title: 'Custom Builds', image: '/C.png' },
-    { title: 'GMSV', image: '/D.png' },
-  ];
-
+import React from 'react'
+import {
+  TruckIcon,
+  HardHatIcon,
+  WrenchIcon,
+  ShieldCheckIcon,
+} from 'lucide-react'
+export const TrustBar = () => {
+  const features = [
+    {
+      icon: TruckIcon,
+      text: 'Australia Wide Delivery',
+    },
+    {
+      icon: HardHatIcon,
+      text: 'American Truck Experts',
+    },
+    {
+      icon: WrenchIcon,
+      text: 'Custom Builds',
+    },
+    {
+      icon: ShieldCheckIcon,
+      text: 'Authorised GMSV Reseller',
+      prefix: 'GMSV>',
+    },
+  ]
   return (
-    <section className="w-full bg-white pb-16">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {cards.map((card, index) => (
-            <a
-              key={index}
-              href="#"
-              className="relative h-[240px] group overflow-hidden block cursor-pointer"
-            >
-              {/* Background Image from public folder */}
+    <section className="w-full bg-[#f8f8f8] border-b border-gray-200">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-gray-300">
+          {features.map((feature, index) => {
+            const Icon = feature.icon
+            return (
               <div
-                className="absolute inset-0 w-full h-full bg-cover transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: `url(${card.image})`,
-                  backgroundPosition: 'center', // you can adjust if needed
-                }}
-              />
-
-              {/* Dark Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 w-full p-6 flex items-center justify-between">
-                <h3 className="text-white text-xl font-black uppercase tracking-wide">
-                  {card.title}
-                </h3>
-                <ChevronRightIcon className="w-6 h-6 text-[#B91C1C] transform group-hover:translate-x-1 transition-transform" />
+                key={index}
+                className="flex items-center justify-center gap-4 px-4 group cursor-pointer"
+              >
+                {feature.prefix ? (
+                  <span className="text-[#B91C1C] font-black italic tracking-tighter text-xl group-hover:scale-110 transition-transform">
+                    {feature.prefix}
+                  </span>
+                ) : (
+                  <Icon
+                    className="w-8 h-8 text-[#B91C1C] group-hover:scale-110 transition-transform"
+                    strokeWidth={1.5}
+                  />
+                )}
+                <span className="text-sm font-bold text-gray-800 uppercase tracking-wide">
+                  {feature.text}
+                </span>
               </div>
-            </a>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
