@@ -1,21 +1,19 @@
 import React from 'react';
-import { Header } from './components/Header';
-import { HeroBanner } from './components/HeroBanner';
-import { TrustBar } from './components/TrustBar';
-import { BuildYourTruck } from './components/BuildYourTruck';
-import { CategoryCards } from './components/CategoryCards';
-import { FeaturedBrands } from './components/FeaturedBrands';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { EpisodesPage } from './pages/EpisodesPage';
 export function App() {
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-[#B91C1C] selection:text-white">
-      <Header />
-      <main>
-        <HeroBanner />
-        <TrustBar />
-        <BuildYourTruck />
-        <CategoryCards />
-        <FeaturedBrands />
-      </main>
-    </div>);
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="episodes" element={<EpisodesPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>);
 
 }
