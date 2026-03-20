@@ -62,9 +62,7 @@ export function Navbar() {
             <NavLink to="/" className="block" onClick={() => setIsOpen(false)}>
               <img
                 src="/logo.png"
-                alt="Proof of Life Logo"
-                  className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
- />
+                alt="Proof of Life Logo" className="max-h-16 sm:max-h-20 object-contain"/>
               
             </NavLink>
           </div>
