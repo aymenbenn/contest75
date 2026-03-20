@@ -61,7 +61,7 @@ export function Navbar() {
           <div className="flex-shrink-0 flex items-center">
             <NavLink to="/" className="block" onClick={() => setIsOpen(false)}>
               <img
-                src="/gpt-image-1.5-high-fidelity_a_I\u2019m_getting_ready_to_(1).png"
+                src="/logo.png"
                 alt="Proof of Life Logo"
                 className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
               
