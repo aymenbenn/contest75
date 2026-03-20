@@ -63,7 +63,8 @@ export function Navbar() {
               <img
                 src="/logo.png"
                 alt="Proof of Life Logo"
-                className="h-10 w-10 sm:h-12 sm:w-12 object-contain" />
+                  className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
+ />
               
             </NavLink>
           </div>
