@@ -1,38 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
 
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+:root {
+  --color-primary: #0F4C5C;
+  --color-primary-light: #1A6B7A;
+  --color-accent: #F4A261;
+  --color-accent-dark: #E08B3A;
+  --color-background: #FFF8F0;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #1A1A2E;
+  --color-text-secondary: #4A4A68;
+  --color-success: #2D936C;
+  --color-warning: #F4A261;
+  --color-danger: #C1292E;
+  --color-border: #E8E0D8;
+}
 @layer base {
-  :root {
-    --color-hot-pink: #E84B8A;
-    --color-orange: #E8922D;
-    --color-teal: #4ABFBF;
-    --color-yellow: #F5D547;
-    --color-soft-pink: #F5A0B8;
-    --color-purple: #7B5EA7;
-    --color-cream: #FFF8F0;
-    --color-blush: #FFF0E8;
-    --color-charcoal: #2D2D2D;
+  html {
+    font-size: 18px; /* Base size for 50+ demographic */
+    letter-spacing: 0.01em;
   }
   body {
-    @apply bg-brand-cream text-brand-charcoal font-sans antialiased;
-    /* Smooth scrolling for anchor links if any */
-    scroll-behavior: smooth;
+    @apply bg-background text-textPrimary font-sans antialiased;
+    line-height: 1.6;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-playfair;
+    @apply font-bold text-textPrimary;
+    line-height: 1.3;
+  }
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 }
 @layer utilities {
-  .wes-anderson-border {
-    @apply border border-brand-teal p-1 relative;
-  }
-  .wes-anderson-border-inner {
-    @apply border border-brand-teal p-6 sm:p-10 bg-brand-cream relative;
+  .touch-target {
+    @apply min-h-[56px] min-w-[56px];
   }
 }

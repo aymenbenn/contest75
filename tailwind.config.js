@@ -1,6 +1,6 @@
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
   './index.html',
   './src/**/*.{js,ts,jsx,tsx}'
@@ -8,22 +8,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'hot-pink': 'var(--color-hot-pink)',
-        'brand-orange': 'var(--color-orange)',
-        'brand-teal': 'var(--color-teal)',
-        'brand-yellow': 'var(--color-yellow)',
-        'soft-pink': 'var(--color-soft-pink)',
-        'brand-purple': 'var(--color-purple)',
-        'brand-cream': 'var(--color-cream)',
-        'brand-blush': 'var(--color-blush)',
-        'brand-charcoal': 'var(--color-charcoal)',
+        primary: 'var(--color-primary)',
+        'primary-light': 'var(--color-primary-light)',
+        accent: 'var(--color-accent)',
+        'accent-dark': 'var(--color-accent-dark)',
+        background: 'var(--color-background)',
+        surface: 'var(--color-surface)',
+        textPrimary: 'var(--color-text-primary)',
+        textSecondary: 'var(--color-text-secondary)',
+        success: 'var(--color-success)',
+        warning: 'var(--color-warning)',
+        danger: 'var(--color-danger)',
+        border: 'var(--color-border)',
       },
       fontFamily: {
-        sans: ['"DM Sans"', 'sans-serif'],
-        playfair: ['"Playfair Display"', 'serif'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
       },
-      letterSpacing: {
-        widest: '0.15em',
+      minHeight: {
+        'touch': '56px',
       }
     },
   },
